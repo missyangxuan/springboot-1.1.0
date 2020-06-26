@@ -29,4 +29,6 @@ public class ServiceController {
     public Object discover() {
         return loadBalancerClient.choose("producer").getUri().toString();
     }
+
+
 }
