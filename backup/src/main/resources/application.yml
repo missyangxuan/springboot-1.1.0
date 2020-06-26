@@ -1,0 +1,30 @@
+# tomcat
+server:
+  port: 8002
+spring:
+  application:
+    name: backup
+  boot:
+    admin:
+      client:
+        url: "http://localhost:8000"
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        serviceName: ${spring.application.name}	# 注册到consul的服务名称
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+# backup datasource
+yangxuan:
+  backup:
+    datasource:
+      host: localhost
+      userName: root
+      password: 123456
+      database: springboot
+

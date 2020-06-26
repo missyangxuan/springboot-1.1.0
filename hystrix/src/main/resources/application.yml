@@ -1,0 +1,16 @@
+server:
+  port: 8501
+spring:
+  application:
+    name: hystrix
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        serviceName: ${spring.application.name}
+turbine:
+  instanceUrlSuffix: hystrix.stream
+  appConfig: consumer
+  clusterNameExpression: "'default'"
+  combine-host-port: true
